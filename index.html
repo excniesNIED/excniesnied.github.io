@@ -1,0 +1,85 @@
+﻿﻿<!Doctype Html>
+<html><body background="http://excnies.gitee.io/imgaforhs/bg.png" text="white">
+<head>
+<meta charset="UTF-8">
+<title>
+ excnies's寒舍 - 逝者如斯夫，不舍昼夜！
+</title><link rel="shortcut icon" href="favicon.png">
+</head><script type="text/javascript" src="http://excnies.gitee.io/fwjs/meme.js"></script>    
+
+<canvas class="fireworks" style="position:fixed;left:0;top:0;z-index:99999999;pointer-events:none;"></canvas>
+<script type="text/javascript" src="http://excnies.gitee.io/fwjs/min.js"></script>
+<script type="text/javascript" src="http://excnies.gitee.io/fwjs/fireworks.js"></script>
+  
+<body><center>
+<br><a href="index.html" style="color:#00bfff;"><img src="http://excnies.gitee.io/imgaforhs/index.png" weight="509" height="199.5"></a>
+<p style="color:black;">excnies's寒舍</p>
+<h2>热烈庆祝华为<a href="https://openharmony.gitee.com/" style="color:#00bfff;">HarmonyOS</a>正式开源！</h2>
+
+<hr>
+
+<a href ="ms.html" style="color:#00bfff;"><img src="http://excnies.gitee.io/imgaforhs/ms.png" weight="509" height="199.5"></a>
+<br><br>
+<a href ="tool.html" style="color:#00bfff;"><img src="http://excnies.gitee.io/imgaforhs/tool.png" weight="509" height="199.5"></a>
+<br><br>
+<a href ="use.html" style="color:#00bfff;"><img src="http://excnies.gitee.io/imgaforhs/use.png" weight="509" height="199.5"></a>
+<br><br>
+<a href ="help.html" style="color:#00bfff;"><img src="http://excnies.gitee.io/imgaforhs/help.png" weight="509" height="152.5"></a>
+<br><br>
+<a href ="about.html" style="color:#00bfff;"><img src=" http://excnies.gitee.io/imgaforhs/about.png" weight="509" height="152.5"></a>
+  
+    
+<hr>
+©2013-2020 <a href="index.html" style="color:#00bfff;">excnies</a> All Rights Reserved<br>
+
+
+<script>
+    function secondToDate(second) {
+        if (!second) {
+            return 0;
+        }
+        var time = new Array(0, 0, 0, 0, 0);
+        if (second >= 365 * 24 * 3600) {
+            time[0] = parseInt(second / (365 * 24 * 3600));
+            second %= 365 * 24 * 3600;
+        }
+        if (second >= 24 * 3600) {
+            time[1] = parseInt(second / (24 * 3600));
+            second %= 24 * 3600;
+        }
+        if (second >= 3600) {
+            time[2] = parseInt(second / 3600);
+            second %= 3600;
+        }
+        if (second >= 60) {
+            time[3] = parseInt(second / 60);
+            second %= 60;
+        }
+        if (second > 0) {
+            time[4] = second;
+        }
+        return time;
+    }
+</script>
+<script type="text/javascript" language="javascript">
+    function setTime() {
+        // 博客创建时间秒数，时间格式中，月比较特殊，是从0开始的，所以想要显示5月，得写4才行，如下
+        var create_time = Math.round(new Date(Date.UTC(2020, 3, 20, 5, 0, 0))
+                .getTime() / 1000);
+        // 当前时间秒数,增加时区的差异
+        var timestamp = Math.round((new Date().getTime() + 8 * 60 * 60 * 1000) / 1000);
+        currentTime = secondToDate((timestamp - create_time));
+        currentTimeHtml = currentTime[0] + '年' + currentTime[1] + '天'
+                + currentTime[2] + '时' + currentTime[3] + '分' + currentTime[4]
+                + '秒';
+        document.getElementById("htmer_time").innerHTML = currentTimeHtml;
+    }
+    setInterval(setTime, 1000);
+</script>
+   已在风雨中度过 <span id="htmer_time" style="color: white;"></span>
+<h5>空谈误国，实干兴邦</h5>
+<h4>Empty talk will harm the country, <br>but action will prosper the country.
+</h4>
+</center>
+</body>
+</html>
